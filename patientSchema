@@ -1,0 +1,39 @@
+const mongoose = require("mongoose");
+
+mognoose.connect("mongodb://localhost:27017/patientsDB", { useNewUrlParser: true });
+
+const patientSchema = new mongoose.Schema ({
+    name: {
+        type: String,
+        required: true
+    },
+    room: {
+        type: Number,
+        min: 9201,
+        max: 9232,
+        required: true
+    },
+    diagnosis: String
+});
+
+const Patient = mongoose.model("Patient", patientSchema);
+
+const patient = new Patient({
+    name: 
+    rating:
+    review:
+});
+
+patient.save();
+
+
+
+Patient.find(function(err, patients){
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(patients);
+    }
+});
+
+mongoose.connection.close();
